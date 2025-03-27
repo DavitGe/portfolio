@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# David Gelovani - Professional Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 15, React 19, and TailwindCSS 4 showcasing my projects, resume, and contact information.
 
-First, run the development server:
+![Portfolio Screenshot](./public/images/portfolio-screenshot.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- **Responsive Design**: Flawlessly adapts to all screen sizes and devices
+- **Modern UI/UX**: Clean interface with smooth animations and transitions
+- **Portfolio Projects**: Showcase of my work with detailed descriptions
+- **Interactive Elements**: Animated headings, custom SVG animations
+- **Contact Form**: Easy way for potential clients/employers to reach out
+- **Resume/CV**: Professional background and qualifications
+- **Dark Mode**: Eye-friendly dark theme with subtle design elements
+
+## 💻 Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: TailwindCSS 4
+- **Animations**: CSS animations, Custom SVG animations
+- **Deployment**: Vercel
+- **Email Integration**: Nodemailer for contact form submissions
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 20 or higher
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   # or
+   yarn
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. Create a `.env.local` file in the root directory for environment variables:
+
+   ```
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-email-app-password
+   EMAIL_TO=recipient-email@example.com
+   ```
+
+4. Start the development server
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📂 Project Structure
+
+```
+portfolio/
+├── public/               # Static assets
+│   └── images/           # Image files
+├── src/
+│   ├── app/              # Next.js App Router
+│   │   ├── api/          # API routes for contact form
+│   │   ├── contact/      # Contact page
+│   │   ├── projects/     # Projects showcase
+│   │   ├── resume/       # Resume/CV page
+│   │   ├── globals.css   # Global styles
+│   │   ├── layout.tsx    # Root layout
+│   │   └── page.tsx      # Home page
+│   └── components/       # Reusable UI components
+└── ...config files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔍 Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Page Updates**: Modify files in the `src/app` directory to update page content
+- **Component Changes**: Edit or add components in the `src/components` directory
+- **Styling**: Update TailwindCSS styles in individual files or `globals.css`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 License
 
-## Learn More
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+David Gelovani - [LinkedIn](https://linkedin.com) - email@example.com
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2023 David Gelovani. All rights reserved.
