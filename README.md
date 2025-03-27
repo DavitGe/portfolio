@@ -103,10 +103,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📬 Contact
 
-David Gelovani - [LinkedIn](https://linkedin.com) - email@example.com
+David Gelovani - [LinkedIn](https://www.linkedin.com/in/davit-gelovani-379605228/) - davit.gelovani403@gmail.com
 
-Project Link: [https://github.com/DavitGe/portfolio](https://github.com/yourusername/portfolio)
-
----
-
-© 2023 David Gelovani. All rights reserved.
+Project Link: [https://github.com/DavitGe/portfolio](https://github.com/DavitGe/portfolio)
