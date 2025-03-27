@@ -105,7 +105,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 David Gelovani - [LinkedIn](https://linkedin.com) - email@example.com
 
-Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
+Project Link: [https://github.com/DavitGe/portfolio](https://github.com/yourusername/portfolio)
 
 ---
 
