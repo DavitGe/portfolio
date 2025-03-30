@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import AnimatedHeading from "@/components/AnimatedHeading";
+import socialConfig from "@/config/social";
 
 export default function Home() {
   return (
@@ -127,7 +128,7 @@ export default function Home() {
               </div>
               <div className="flex space-x-6">
                 <a
-                  href="https://github.com/DavitGe"
+                  href={socialConfig.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -141,7 +142,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/davit-gelovani-379605228/"
+                  href={socialConfig.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-300"

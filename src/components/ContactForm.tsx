@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import socialConfig from "@/config/social";
 
 type ServiceType = "Development" | "Founder & Partner" | "Consulting";
 
@@ -339,7 +340,7 @@ const ContactForm = () => {
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="flex flex-wrap gap-4">
             <a
-              href="https://www.linkedin.com/in/davit-gelovani-379605228/"
+              href={socialConfig.linkedin}
               className="p-3 rounded-full text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300"
               aria-label="LinkedIn"
             >
@@ -348,7 +349,7 @@ const ContactForm = () => {
               </svg>
             </a>
             <a
-              href="https://github.com/DavitGe"
+              href={socialConfig.github}
               className="p-3 rounded-full text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300"
               aria-label="GitHub"
             >
