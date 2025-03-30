@@ -34,7 +34,7 @@ A modern, responsive portfolio website built with Next.js 15, React 19, and Tail
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/DavitGe/portfolio.git
    cd portfolio
    ```
 
