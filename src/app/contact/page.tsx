@@ -127,7 +127,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold">Email</h3>
                     <p className="text-gray-400 mt-1">
-                      hello@davidgelovani.com
+                      davit.gelovani403@gmail.com
                     </p>
                   </div>
                 </div>

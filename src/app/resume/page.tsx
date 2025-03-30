@@ -1,6 +1,29 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import resumeConfig, { ResumeConfig, loadResumeData } from "@/config/resume";
 
 export default function ResumePage() {
+  const [resumeData, setResumeData] = useState<ResumeConfig>(resumeConfig);
+
+  // Ensure we're loading the latest data from localStorage on component mount
+  useEffect(() => {
+    setResumeData(loadResumeData());
+  }, []);
+
+  const { personalInfo, skills, experiences, education } = resumeData;
+
+  // Function to format description with line breaks
+  const formatDescription = (text: string) => {
+    return text.split("\n").map((line, i) => (
+      <span key={i}>
+        {line}
+        {i < text.split("\n").length - 1 && <br />}
+      </span>
+    ));
+  };
+
   return (
     <div className="bg-[#0c0c11] text-white min-h-screen overflow-x-hidden">
       {/* Navigation with animated menu */}
@@ -13,11 +36,8 @@ export default function ResumePage() {
           <div className="bg-[#151519] rounded-xl p-8 shadow-[0_10px_50px_rgba(0,0,0,0.3)]">
             {/* Personal Info */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6">David Gelovani</h2>
-              <p className="text-gray-400 mb-4">
-                Full Stack Developer with strong focus on modern frontend
-                technologies
-              </p>
+              <h2 className="text-2xl font-bold mb-6">{personalInfo.name}</h2>
+              <p className="text-gray-400 mb-4">{personalInfo.title}</p>
               <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                 <span className="flex items-center">
                   <svg
@@ -29,7 +49,7 @@ export default function ResumePage() {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                   </svg>
-                  hello@davidgelovani.com
+                  {personalInfo.email}
                 </span>
                 <span className="flex items-center">
                   <svg
@@ -40,7 +60,7 @@ export default function ResumePage() {
                   >
                     <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"></path>
                   </svg>
-                  Location
+                  {personalInfo.location}
                 </span>
               </div>
             </div>
@@ -49,42 +69,14 @@ export default function ResumePage() {
             <div className="mb-12">
               <h3 className="text-xl font-bold mb-4 text-purple-500">Skills</h3>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  React
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  Next.js
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  TypeScript
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  JavaScript
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  HTML
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  CSS
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  TailwindCSS
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  Node.js
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  Express
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  MongoDB
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  PostgreSQL
-                </span>
-                <span className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm">
-                  Git
-                </span>
+                {skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-[#1c1c24] rounded-full text-sm"
+                  >
+                    {skill.name}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -94,59 +86,35 @@ export default function ResumePage() {
                 Experience
               </h3>
 
-              <div className="mb-8 border-l-2 border-purple-500 pl-6 relative">
-                <div className="w-4 h-4 bg-purple-500 rounded-full absolute -left-[9px] top-1"></div>
-                <div className="mb-2">
-                  <h4 className="text-lg font-semibold">
-                    Senior Frontend Developer
-                  </h4>
-                  <p className="text-gray-400 text-sm">
-                    Company Name • 2022 - Present
+              {experiences.map((experience, index) => (
+                <div
+                  key={index}
+                  className="mb-8 border-l-2 border-purple-500 pl-6 relative"
+                >
+                  <div className="w-4 h-4 bg-purple-500 rounded-full absolute -left-[9px] top-1"></div>
+                  <div className="mb-2">
+                    <h4 className="text-lg font-semibold">
+                      {experience.title}
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      {experience.company} • {experience.period}
+                    </p>
+                  </div>
+                  <p className="text-gray-300 mb-4">
+                    {formatDescription(experience.description)}
                   </p>
+                  <div className="flex flex-wrap gap-2">
+                    {experience.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-2 py-1 bg-[#1c1c24] rounded-md text-xs"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-gray-300 mb-4">
-                  Lead the development of modern web applications using React,
-                  TypeScript and Next.js. Implemented state management with
-                  Redux and improved performance by 40%.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-[#1c1c24] rounded-md text-xs">
-                    React
-                  </span>
-                  <span className="px-2 py-1 bg-[#1c1c24] rounded-md text-xs">
-                    TypeScript
-                  </span>
-                  <span className="px-2 py-1 bg-[#1c1c24] rounded-md text-xs">
-                    Next.js
-                  </span>
-                </div>
-              </div>
-
-              <div className="mb-8 border-l-2 border-purple-500 pl-6 relative">
-                <div className="w-4 h-4 bg-purple-500 rounded-full absolute -left-[9px] top-1"></div>
-                <div className="mb-2">
-                  <h4 className="text-lg font-semibold">Frontend Developer</h4>
-                  <p className="text-gray-400 text-sm">
-                    Company Name • 2020 - 2022
-                  </p>
-                </div>
-                <p className="text-gray-300 mb-4">
-                  Developed responsive web applications, collaborated with
-                  design team to implement UI/UX best practices, and optimized
-                  application performance.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-[#1c1c24] rounded-md text-xs">
-                    JavaScript
-                  </span>
-                  <span className="px-2 py-1 bg-[#1c1c24] rounded-md text-xs">
-                    React
-                  </span>
-                  <span className="px-2 py-1 bg-[#1c1c24] rounded-md text-xs">
-                    CSS
-                  </span>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Education */}
@@ -155,20 +123,24 @@ export default function ResumePage() {
                 Education
               </h3>
 
-              <div className="border-l-2 border-purple-500 pl-6 relative">
-                <div className="w-4 h-4 bg-purple-500 rounded-full absolute -left-[9px] top-1"></div>
-                <div className="mb-2">
-                  <h4 className="text-lg font-semibold">
-                    Bachelor of Science in Computer Science
-                  </h4>
-                  <p className="text-gray-400 text-sm">
-                    University Name • 2016 - 2020
-                  </p>
-                </div>
-                <p className="text-gray-300">
-                  Graduated with honors. Specialized in web development and
-                  software engineering.
-                </p>
+              <div className="space-y-8">
+                {education.map((edu, index) => (
+                  <div
+                    key={index}
+                    className="border-l-2 border-purple-500 pl-6 relative"
+                  >
+                    <div className="w-4 h-4 bg-purple-500 rounded-full absolute -left-[9px] top-1"></div>
+                    <div className="mb-2">
+                      <h4 className="text-lg font-semibold">{edu.degree}</h4>
+                      <p className="text-gray-400 text-sm">
+                        {edu.institution} • {edu.period}
+                      </p>
+                    </div>
+                    <p className="text-gray-300">
+                      {formatDescription(edu.description)}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
