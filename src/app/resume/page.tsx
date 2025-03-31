@@ -147,8 +147,11 @@ export default function ResumePage() {
 
           <div className="mt-8 flex justify-center">
             <a
-              href="#"
+              href="/David_Gelovani.pdf"
+              download="David_Gelovani.pdf"
               className="inline-flex items-center justify-center px-6 py-3 bg-[#1c1c24] hover:bg-[#2a2a36] text-white font-medium rounded-lg transition-all duration-300 group relative overflow-hidden border-2 border-yellow-400 shadow-[4px_4px_0px_0px_rgba(250,204,21,0.7)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span className="flex items-center">
                 <svg

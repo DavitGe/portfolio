@@ -226,32 +226,6 @@ const Navigation = () => {
                 Send me message
               </a>
             </li>
-
-            {/* Admin link - slightly hidden/different styling */}
-            <li className="menu-item mt-12">
-              <a
-                href="#"
-                className={`block py-2 px-4 text-sm opacity-60 hover:opacity-100 uppercase tracking-wider transition-all duration-300 ${
-                  pathname === "/admin/resume"
-                    ? "text-yellow-400"
-                    : "text-white hover:text-yellow-400"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation("/admin/resume");
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    handleNavigation("/admin/resume");
-                  }
-                }}
-                tabIndex={0}
-                aria-label="Navigate to Resume Admin page"
-              >
-                Resume Admin
-              </a>
-            </li>
           </ul>
         </nav>
       </div>
