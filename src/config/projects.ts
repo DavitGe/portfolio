@@ -59,7 +59,7 @@ export const projects: Project[] = [
     description:
       "A simple 2048 game. The player can move the tiles with arrow keys and the game ends when the player reaches 2048.",
     tags: [projectTags.react, projectTags.typescript],
-    projectUrl: "https://2048-davitge.vercel.app/",
+    projectUrl: "https://2048-seven-iota.vercel.app/",
     borderColor: "border-purple-400",
     imageUrl: "/images/2048-screen.webp",
   },
