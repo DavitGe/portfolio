@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Link from "next/link";
+import Image from "next/image";
 import AnimatedHeading from "@/components/AnimatedHeading";
 import socialConfig from "@/config/social";
 
@@ -14,7 +15,7 @@ export default function Home() {
         <div className="relative min-h-screen flex items-center justify-center p-8">
           {/* Hand emoji on left */}
           <div className="absolute left-4 md:left-16 lg:left-24 top-1/3 z-10">
-            <img
+            <Image
               src="/images/hand-ok.svg"
               alt="OK hand"
               width={120}
@@ -107,7 +108,7 @@ export default function Home() {
 
           {/* Hand emoji on right */}
           <div className="absolute right-4 md:right-16 lg:right-24 bottom-1/3 z-10">
-            <img
+            <Image
               src="/images/hand-point.svg"
               alt="Pointing hand"
               width={120}

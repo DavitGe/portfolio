@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 export const CustomCursor = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +14,7 @@ export const CustomCursor = () => {
   const smoothFactor = 0.2;
 
   // Simple animation loop that always runs when cursor is visible
-  const updateCursorPosition = () => {
+  const updateCursorPosition = useCallback(() => {
     if (!cursorRef.current) return;
 
     // Calculate distance between current position and target
@@ -34,7 +34,7 @@ export const CustomCursor = () => {
 
     // Continue animation loop
     requestRef.current = requestAnimationFrame(updateCursorPosition);
-  };
+  }, [isPointer, smoothFactor]);
 
   // Start animation loop when component mounts
   useEffect(() => {
@@ -46,7 +46,7 @@ export const CustomCursor = () => {
         requestRef.current = null;
       }
     };
-  }, []);
+  }, [updateCursorPosition]);
 
   // Handle mouse movement and interaction states
   useEffect(() => {

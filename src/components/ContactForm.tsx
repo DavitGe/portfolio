@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import socialConfig from "@/config/social";
+import Image from "next/image";
 
 type ServiceType = "Development" | "Founder & Partner" | "Consulting";
 
@@ -63,7 +64,7 @@ const ContactForm = () => {
         projectCategory: "",
         budget: "",
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         success: false,
         message:
@@ -366,10 +367,12 @@ const ContactForm = () => {
         <div className="absolute inset-0">
           {/* Background image with colorful abstract visual */}
           <div className="absolute inset-0 z-0">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Abstract colorful visualization"
               className="w-full h-full object-cover object-center"
+              width={800}
+              height={600}
             />
             <div className="absolute inset-0 bg-black/20 mix-blend-multiply"></div>
           </div>

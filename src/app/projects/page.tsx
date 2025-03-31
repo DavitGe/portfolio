@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { projects, getShadowClass } from "@/config/projects";
+import Image from "next/image";
 
 export default function ProjectsPage() {
   return (
@@ -20,10 +21,12 @@ export default function ProjectsPage() {
               >
                 <div className="h-48 bg-[#1c1c24] rounded-md mb-6">
                   {project.imageUrl && (
-                    <img
+                    <Image
                       src={project.imageUrl}
                       alt={`${project.title} thumbnail`}
                       className="h-full w-full object-cover rounded-md"
+                      width={400}
+                      height={225}
                     />
                   )}
                 </div>

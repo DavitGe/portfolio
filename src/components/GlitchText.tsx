@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface GlitchTextProps {
   text: string;
@@ -48,7 +48,7 @@ const GlitchText = ({
   const settings = intensitySettings[intensity];
 
   // Create random glitch text by replacing characters
-  const generateGlitchText = () => {
+  const generateGlitchText = useCallback(() => {
     return text
       .split("")
       .map((char) => {
@@ -58,7 +58,7 @@ const GlitchText = ({
           : char;
       })
       .join("");
-  };
+  }, [text, settings.probability, glitchChars]);
 
   // Handle glitch effect timing
   useEffect(() => {
@@ -117,7 +117,7 @@ const GlitchText = ({
       clearInterval(glitchInterval);
       clearTimeout(initialGlitch);
     };
-  }, [text, settings, isHovering]);
+  }, [text, settings, isHovering, generateGlitchText]);
 
   // Special glitch handling for hover events
   const handleHoverStart = () => {

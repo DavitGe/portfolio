@@ -99,11 +99,11 @@ export default function ContactPage() {
             <div>
               <div className="mb-10">
                 <h2 className="text-2xl font-bold mb-6">
-                  Let's talk about your project
+                  Let&apos;s talk about your project
                 </h2>
                 <p className="text-gray-400">
-                  Feel free to reach out if you're looking for a developer, have
-                  a question, or just want to connect.
+                  Feel free to reach out if you&apos;re looking for a developer,
+                  have a question, or just want to connect.
                 </p>
               </div>
 
@@ -251,8 +251,8 @@ export default function ContactPage() {
                   </svg>
                   <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
                   <p className="text-gray-300">
-                    Thank you for reaching out! I'll get back to you as soon as
-                    possible.
+                    Thank you for reaching out! I&apos;ll get back to you as
+                    soon as possible.
                   </p>
                   <button
                     onClick={() =>

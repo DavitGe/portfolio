@@ -19,7 +19,6 @@ const Navigation = () => {
   // Handle typing animation
   useEffect(() => {
     const handleTyping = () => {
-      const current = loopNum % 1; // We only have one text to loop through
       const fullString = fullText;
 
       setText(
