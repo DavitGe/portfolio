@@ -23,6 +23,7 @@ export const projectTags = {
   nodejs: { name: "Node.js" },
   mongodb: { name: "MongoDB" },
   mysql: { name: "MySQL" },
+  uiux: { name: "UI/UX" },
   // Add more tags as needed
 };
 
@@ -54,6 +55,15 @@ export const projects: Project[] = [
     imageUrl: "/images/myhelper-screen.webp",
   },
   {
+    id: "Schedy",
+    title: "Schedy",
+    description: "It's simple one page landing, designed and built by me.",
+    tags: [projectTags.react, projectTags.typescript, projectTags.uiux],
+    projectUrl: "https://schedy-landing.vercel.app/",
+    borderColor: "border-red-400",
+    imageUrl: "/images/schedy.webp",
+  },
+  {
     id: "2048-game",
     title: "2048 Game",
     description:
@@ -72,6 +82,7 @@ export const getShadowClass = (borderColor: string): string => {
     "border-blue-400": "shadow-[4px_4px_0px_0px_rgba(96,165,250,0.7)]",
     "border-green-400": "shadow-[4px_4px_0px_0px_rgba(74,222,128,0.7)]",
     "border-purple-400": "shadow-[4px_4px_0px_0px_rgba(192,132,252,0.7)]",
+    "border-red-400": "shadow-[4px_4px_0px_0px_rgba(248,113,113,0.7)]",
     // Add more mappings as needed
   };
 
